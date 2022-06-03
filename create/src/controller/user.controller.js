@@ -1,5 +1,5 @@
 export default () => {
-  return `{const service = require("../service/user.service");
+  return `const service = require("../service/user.service");
 
 //这里就是放处理逻辑的
 class UserController {

@@ -1,5 +1,5 @@
 export default () => {
-  return `{const mysql = require("../app/mysql.database");
+  return `const mysql = require("../app/mysql.database");
 
 //这里存放对数据库进行操作的逻辑
 

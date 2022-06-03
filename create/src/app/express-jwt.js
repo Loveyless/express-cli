@@ -1,5 +1,5 @@
 export default () => {
-  return `{const { expressjwt: expressJwt } = require("express-jwt");
+  return `const { expressjwt: expressJwt } = require("express-jwt");
 const { PUBLIC_KEY } = require("../../key/index");
 const config = require("config");
 

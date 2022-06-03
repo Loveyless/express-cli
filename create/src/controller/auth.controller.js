@@ -1,5 +1,5 @@
 export default () => {
-  return `{const jwt = require("jsonwebtoken");
+  return `const jwt = require("jsonwebtoken");
 const { PRIVATE_KEY } = require("../../key/index");
 const config = require("config");
 

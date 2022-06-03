@@ -1,5 +1,5 @@
 export default () => {
-  return `{const md5 = require("md5");
+  return `const md5 = require("md5");
 
 const md5password = (password) => {
   //返回md5加密后的密码

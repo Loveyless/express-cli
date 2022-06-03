@@ -1,5 +1,5 @@
 export default () => {
-  return `{const { isExist, isLogin } = require("../service/user.service");
+  return `const { isExist, isLogin } = require("../service/user.service");
 const md5password = require("../utils/md5");
 
 const verifyLogin = async (req, res, next) => {

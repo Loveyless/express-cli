@@ -1,5 +1,5 @@
 export default () => {
-  return `{const fs = require("fs");
+  return `const fs = require("fs");
 
 // 递归写法
 // sep根据系统来创建分割符号
@@ -11,8 +11,6 @@ const eachFile = (app, fileName, file = __dirname) => {
 
   if (!isDir) {
     //是文件直接注册
-    // console.log(file, "---"); //C:\AA New Projects\codeHub_mysql\src\router\authafnoiagbaoaiao\auth.router.js ---
-    // console.log(fileName, "==="); //auth.router.js ===
 
     // index是不需要被导入的
     if (file.includes("index.js")) return;
@@ -23,10 +21,10 @@ const eachFile = (app, fileName, file = __dirname) => {
     //这里把auth文件名改为login方便发请求
     if (routerPath == "auth") routerPath = "login";
 
-    //引入 如：C:\AA New Projects\codeHub_mysql\src\router\authafnoiagbaoaiao\auth.router.js
+    //引入
     const router = require(file);
 
-    //注册 如：app.use("/login", "C:\AA New Projects\codeHub_mysql\src\router\authafnoiagbaoaiao\auth.router.js")
+    //注册
     app.use("/" + routerPath, router);
   } else {
     //文件夹是递归

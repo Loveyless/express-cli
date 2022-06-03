@@ -1,8 +1,38 @@
 // #!/usr/bin/env node
 
 // 引入创建文件
-import default_json from "./create/config/default.json.js";
+//config
+import config_default from './create/config/default.json.js';
+//key
+import key_index from "./create/key/index.js";
+import key_private from "./create/key/private.key.js";
+import key_public from "./create/key/public.key.js";
+//src
+  //app
+  import app_expressJwt from './create/src/app/express-jwt.js';
+  import app_index from "./create/src/app/index.js";
+  import app_mongodb_database from './create/src/app/mongodb.database.js';
+  import app_mysql_database from "./create/src/app/mysql.database.js";
+  //controller
+  import controller_auth from "./create/src/controller/auth.controller.js";
+  import controller_user from "./create/src/controller/user.controller.js";
+  //middleware
+  import middleware_auth from "./create/src/middleware/auth.middleware.js";
+  import middleware_user from "./create/src/middleware/user.middleware.js";
+  //mongodb
+  import mongodb_test from "./create/src/mongodb/test.js";
+  //router
+  import router_index from "./create/src/router/index.js";
+  import router_auth from "./create/src/router/auth.router.js";
+  import router_user from "./create/src/router/user.router.js";
+  //service
+  import service_user from "./create/src/service/user.service.js";
+  //util
+  import util_md5 from "./create/src/utils/md5.js";
+  //main.js
+  import main from "./create/src/main.js";
 
+import package_json from './create/package.json.js';
 
 import { fileURLToPath } from "url";
 import fs from "fs";
@@ -113,49 +143,48 @@ console.log(chalk.gray(`creating project files ...`));
 //创建项目名的文件夹
 fs.mkdirSync(getRootPath());
 
-console.log(() => import("./create/config/default.json.js")());
 fs.mkdirSync(`${getRootPath()}/config`);
-fs.writeFileSync(`${getRootPath()}/config/default.json`, default_json());
+fs.writeFileSync(`${getRootPath()}/config/default.json`, config_default());
 
 fs.mkdirSync(`${getRootPath()}/key`);
-fs.writeFileSync(`${getRootPath()}/key/index.js`, (() => import("./create/key/index")()));
-fs.writeFileSync(`${getRootPath()}/key/private.key`, () => import("./create/key/private.key"));
-fs.writeFileSync(`${getRootPath()}/key/public.key`, () => import("./create/key/public.key"));
+fs.writeFileSync(`${getRootPath()}/key/index.js`, key_index());
+fs.writeFileSync(`${getRootPath()}/key/private.key`, key_private());
+fs.writeFileSync(`${getRootPath()}/key/public.key`, key_public());
 
 fs.mkdirSync(`${getRootPath()}/src`);
 
     fs.mkdirSync(`${getRootPath()}/src/app`);
-    fs.writeFileSync(`${getRootPath()}/src/app/express-jwt.js`, () => import("./create/src/app/express-jwt"));
-    fs.writeFileSync(`${getRootPath()}/src/app/index.js`, () => import("./create/src/app/index"));
-    fs.writeFileSync(`${getRootPath()}/src/app/mongodb.database.js`, () => import("./create/src/app/mongodb.database"));
-    fs.writeFileSync(`${getRootPath()}/src/app/mysql.database.js`, () => import("./create/src/app/mysql.database"));
+    fs.writeFileSync(`${getRootPath()}/src/app/express-jwt.js`, app_expressJwt());
+    fs.writeFileSync(`${getRootPath()}/src/app/index.js`, app_index());
+    fs.writeFileSync(`${getRootPath()}/src/app/mongodb.database.js`, app_mongodb_database());
+    fs.writeFileSync(`${getRootPath()}/src/app/mysql.database.js`, app_mysql_database());
 
     fs.mkdirSync(`${getRootPath()}/src/controller`);
-    fs.writeFileSync(`${getRootPath()}/src/controller/auth.controller.js`, () => import("./create/src/controller/auth.controller") );
-    fs.writeFileSync(`${getRootPath()}/src/controller/user.controller.js`, () => import("./create/src/controller/user.controller") );
+    fs.writeFileSync(`${getRootPath()}/src/controller/auth.controller.js`, controller_auth());
+    fs.writeFileSync(`${getRootPath()}/src/controller/user.controller.js`, controller_user());
 
     fs.mkdirSync(`${getRootPath()}/src/middleware`);
-    fs.writeFileSync(`${getRootPath()}/src/middleware/auth.middleware.js`, () => import("./create/src/controller/auth.middleware") );
-    fs.writeFileSync(`${getRootPath()}/src/middleware/user.middleware.js`, () => import("./create/src/controller/user.middleware") );
+    fs.writeFileSync(`${getRootPath()}/src/middleware/auth.middleware.js`, middleware_auth());
+    fs.writeFileSync(`${getRootPath()}/src/middleware/user.middleware.js`, middleware_user());
 
     fs.mkdirSync(`${getRootPath()}/src/mongodb`);
-    fs.writeFileSync(`${getRootPath()}/src/mongodb/test.js`, () => import("./create/src/mongodb/test"));
+    fs.writeFileSync(`${getRootPath()}/src/mongodb/test.js`, mongodb_test());
 
     fs.mkdirSync(`${getRootPath()}/src/router`);
-    fs.writeFileSync(`${getRootPath()}/src/router/index.js`, () => import("./create/src/router/index"));
-    fs.writeFileSync(`${getRootPath()}/src/router/auth.router.js`, () => import("./create/src/router/auth.router"));
-    fs.writeFileSync(`${getRootPath()}/src/router/user.router.js`, () => import("./create/src/router/user.router"));
+    fs.writeFileSync(`${getRootPath()}/src/router/index.js`, router_index());
+    fs.writeFileSync(`${getRootPath()}/src/router/auth.router.js`, router_auth());
+    fs.writeFileSync(`${getRootPath()}/src/router/user.router.js`, router_user());
 
     fs.mkdirSync(`${getRootPath()}/src/service`);
-    fs.writeFileSync(`${getRootPath()}/src/service.js`, () => import("./create/src/service"));
+    fs.writeFileSync(`${getRootPath()}/src/service/user.service.js`, service_user());
 
     fs.mkdirSync(`${getRootPath()}/src/utils`);
-    fs.writeFileSync(`${getRootPath()}/src/utils/md5.js`, () => import("./create/src/utils/md5"));
+    fs.writeFileSync(`${getRootPath()}/src/utils/md5.js`, util_md5());
 
-    fs.writeFileSync(`${getRootPath()}/src/main.js`, () => import("./create/src/main"));
+    fs.writeFileSync(`${getRootPath()}/src/main.js`, main());
 
 fs.writeFileSync(`${getRootPath()}/.gitignore.js`, "node_modules/");
-fs.writeFileSync(`${getRootPath()}/package.json`, () => import("./create/package.json"));
+fs.writeFileSync(`${getRootPath()}/package.json`, package_json(packageName));
 fs.writeFileSync(`${getRootPath()}/README.md`, "*");
 console.log(chalk.gray(`creating project files success`));
 

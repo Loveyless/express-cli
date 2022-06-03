@@ -1,5 +1,5 @@
 export default () => {
-  return `{const mysql = require("mysql2");
+  return `const mysql = require("mysql2");
 const config = require("config");
 const { mysql: mysql_config } = config;
 

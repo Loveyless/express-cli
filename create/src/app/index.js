@@ -1,5 +1,5 @@
 export default () => {
-  return `{const express = require("express");
+  return `const express = require("express");
 const app = express();
 const config = require("config");
 

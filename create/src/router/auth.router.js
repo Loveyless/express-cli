@@ -1,5 +1,5 @@
 export default () => {
-  return `{const authRouter = require("express").Router();
+  return `const authRouter = require("express").Router();
 
 const { verifyLogin } = require("../middleware/auth.middleware");
 

@@ -1,5 +1,5 @@
 export default () => {
-  return `{const userRouter = require("express").Router();
+  return `const userRouter = require("express").Router();
 
 //中间件
 const { verifyUser, handlePassword } = require("../middleware/user.middleware");

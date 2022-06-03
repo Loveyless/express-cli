@@ -1,5 +1,5 @@
 export default () => {
-  return `{const { isExist } = require("../service/user.service");
+  return `const { isExist } = require("../service/user.service");
 const md5password = require("../utils/md5");
 
 //验证用户

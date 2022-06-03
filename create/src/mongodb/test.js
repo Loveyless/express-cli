@@ -1,5 +1,5 @@
 export default () => {
-  return `{const mongoose = require("mongoose");
+  return `const mongoose = require("mongoose");
 
 const testRule = mongoose.Schema({});
 

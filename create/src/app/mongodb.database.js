@@ -1,5 +1,5 @@
 export default () => {
-  return `{const mongoose = require("mongoose");
+  return `const mongoose = require("mongoose");
 const mongo_config = require("config");
 
 mongoose.connect(
