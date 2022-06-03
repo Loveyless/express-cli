@@ -1,14 +1,19 @@
 {
-  "name": "express-cli",
-  "version": "1.0.0",
+  "name": "add-express",
+  "version": "2.0.0",
   "description": "",
+  "bin": "./bin/index.js",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "bin",
+    "package.json"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Github@Loveyless",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.0.1",
