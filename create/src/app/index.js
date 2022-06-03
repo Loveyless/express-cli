@@ -16,9 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 //express-jwt验证
 app.use(require("./express-jwt"));
 
-//注册路由
-// const useRouter = require("../router");
-// useRouter(app);
+app.get("/",(req,res) => {
+  res.send("hello world ! author:Github@Loveyless");
+})
 
 //注册路由(递归)
 const eachFile = require("../router");

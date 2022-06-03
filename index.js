@@ -59,14 +59,14 @@ const r = await inquirer.prompt([
       return "Please enter package name";
     },
   },
-  // {
-  //   type: "input",
-  //   name: "port",
-  //   default() {
-  //     return 8080;
-  //   },
-  //   message: "set port number",
-  // },
+  {
+    type: "input",
+    name: "port",
+    default() {
+      return 8080;
+    },
+    message: "set port number",
+  },
 
   //暂时默认就是mysql+mongo
   // {
@@ -81,11 +81,11 @@ const r = await inquirer.prompt([
 // 获取用户输入 这里可以操作一下默认值
 const inputConfig = {
   packageName: r.packageName,
-  // port: r.port || 8080,
+  port: r.port || 8080,
   // middleware: {},
 };
 //解构用户输入
-const { packageName } = inputConfig;
+const { packageName, port } = inputConfig;
 // const {  } = inputConfig.middleware;
 
 //把根路径抽离一下
@@ -144,7 +144,7 @@ console.log(chalk.gray(`creating project files ...`));
 fs.mkdirSync(getRootPath());
 
 fs.mkdirSync(`${getRootPath()}/config`);
-fs.writeFileSync(`${getRootPath()}/config/default.json`, config_default());
+fs.writeFileSync(`${getRootPath()}/config/default.json`, config_default(port));
 
 fs.mkdirSync(`${getRootPath()}/key`);
 fs.writeFileSync(`${getRootPath()}/key/index.js`, key_index());
@@ -198,7 +198,8 @@ await execa("npm i", {
 });
 
 //善后工作
-console.log(chalk.gray(`install success`));
 console.log(chalk.gray(`cd ${getRootPath()}`));
-console.log(chalk.gray(`mysql> CREATE DATABASE test_db or change ./config/default.json`));
+console.log(chalk.gray(`mysql> CREATE DATABASE test_db change ./config/default.json`));
+console.log(chalk.gray(`in ./config/default.json change your Mysql user and password`));
 console.log(chalk.gray(`npm start`));
+console.log(chalk.gray(`open the`), chalk.red(`http://localhost:${port}/ \n`));
