@@ -23,7 +23,8 @@ add-express is a small scaffolding for quickly building express services.
 integration with express Mysql MongoDB 
 
 
-[Homepage](https://github.com/loveyless/add-express)
+[Homepage github](https://github.com/loveyless/add-express)
+[Homepage npm](https://www.npmjs.com/package/add-express)
 ## Use 🔨
 
 Global installation
