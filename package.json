@@ -1,6 +1,6 @@
 {
   "name": "add-express",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "a small scaffolding for quickly building express services.",
   "bin": "./bin/index.js",
   "main": "index.js",
@@ -22,7 +22,9 @@
   "keywords": [
     "express",
     "mysql",
-    "cli"
+    "cli",
+    "mongodb",
+    "node"
   ],
   "author": "Github@Loveyless",
   "license": "ISC",
