@@ -78,6 +78,8 @@ header:{
 }
 
 ```
+You can also import postman.json Changing the baseURL
+
 ## File 📂
 ```
 add-express
@@ -96,6 +98,7 @@ add-express
 ├─ .gitignore
 ├─ package.json
 ├─ package-lock.json
+├─ postman.json
 └─ README.md
 ```
 

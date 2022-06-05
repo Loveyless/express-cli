@@ -33,6 +33,7 @@ import key_public from "./create/key/public.key.js";
   import main from "./create/src/main.js";
 
 import package_json from './create/package.json.js';
+import postman_json from "./create/postman.json.js";
 
 import { fileURLToPath } from "url";
 import fs from "fs";
@@ -185,6 +186,7 @@ fs.mkdirSync(`${getRootPath()}/src`);
 
 fs.writeFileSync(`${getRootPath()}/.gitignore.js`, "node_modules/");
 fs.writeFileSync(`${getRootPath()}/package.json`, package_json(packageName));
+fs.writeFileSync(`${getRootPath()}/postman.json`, postman_json());
 fs.writeFileSync(`${getRootPath()}/README.md`, "*");
 console.log(chalk.gray(`creating project files success`));
 
