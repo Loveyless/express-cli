@@ -184,7 +184,7 @@ fs.mkdirSync(`${getRootPath()}/src`);
 
     fs.writeFileSync(`${getRootPath()}/src/main.js`, main());
 
-fs.writeFileSync(`${getRootPath()}/.gitignore.js`, "node_modules/");
+fs.writeFileSync(`${getRootPath()}/.gitignore`, "node_modules/");
 fs.writeFileSync(`${getRootPath()}/package.json`, package_json(packageName));
 fs.writeFileSync(`${getRootPath()}/postman.json`, postman_json());
 fs.writeFileSync(`${getRootPath()}/README.md`, "*");
